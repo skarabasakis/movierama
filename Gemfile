@@ -17,6 +17,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'purecss-rails'
 
+# Authentication
+gem 'devise'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pry-rails'

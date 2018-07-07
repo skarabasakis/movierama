@@ -1,3 +1,18 @@
 @import "purecss";
 @import "header";
 @import "flashes";
+
+.form-wrapper {
+  max-width: 500px;
+  margin: auto;
+
+  input[type=text],
+  input[type=password] {
+    width: 500px;
+  }
+}
+
+form .error {
+  font-size: .75em;
+  color: rgb(202, 60, 60);
+}

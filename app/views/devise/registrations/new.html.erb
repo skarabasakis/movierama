@@ -1,0 +1,30 @@
+<div class="form-wrapper">
+
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'pure-form pure-form-stacked'}) do |f| %>
+    <%= div_for resource.errors.messages[:base], class: 'flash fixed alert' %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username, autofocus: true %>
+    <%= div_for resource.errors.messages[:username], class: 'error' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off" %>
+    <%= div_for resource.errors.messages[:password], class: 'error' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= div_for resource.errors.messages[:password_confirmation], class: 'error' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'pure-button pure-button-primary' %>
+  </div>
+<% end %>
+</div>
