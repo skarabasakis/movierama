@@ -13,6 +13,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 # gem 'capistrano-rails', group: :development
 
+# Assets
+gem 'jquery-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pry-rails'
