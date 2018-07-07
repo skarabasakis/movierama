@@ -1,0 +1,13 @@
+<% unless notice.blank? %>
+  <div class="flash fixed dismissable notice">
+    <a class="dismiss" href="#">×</a>
+    <%= notice %>
+  </div>
+<% end %>
+
+<% unless alert.blank? %>
+  <div class="flash fixed dismissable alert">
+    <a class="dismiss" href="#">×</a>
+    <%= alert %>
+  </div>
+<% end %>
