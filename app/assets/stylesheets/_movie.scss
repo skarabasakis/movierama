@@ -11,4 +11,21 @@
   .meta {
     font-size: .8em;
   }
+
+  .ratings {
+    display: flex;
+    justify-content: space-between;
+
+
+    .rating-label {
+      display: inline-block;
+      white-space: nowrap;
+      padding-right: .2em;
+    }
+
+    .rating-label + .rating-label {
+      border-left: 1px solid black;
+      padding-left: .5em;
+    }
+  }
 }
