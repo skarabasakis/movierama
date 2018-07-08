@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 Welcome
-  <%= link_to current_user.username , edit_user_registration_path %>
+  <%= link_to current_user.username , user_path(current_user) %>
   <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'pure-button' %>
 <% else %>
 <%= link_to 'Log in', new_user_session_path %>
