@@ -7,6 +7,7 @@ class User::RatingsController < User::BaseController
 
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Rating posted' }
+      format.js { render :ratings }
     end
   end
 
@@ -15,6 +16,7 @@ class User::RatingsController < User::BaseController
 
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Rating deleted' }
+      format.js { render :ratings }
     end
   end
 

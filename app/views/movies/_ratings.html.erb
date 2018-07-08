@@ -12,7 +12,7 @@
       <% if user_signed_in? && current_user.can_rate?(movie, score) %>
         <%= link_to score_count_label(movie, score),
                     user_movie_rating_path(movie, params: { score: score }),
-                    method: :post, class: 'rating-link rating-label' %>
+                    remote: true, method: :post, class: 'rating-link rating-label' %>
       <% else %>
         <% unless movie.send("#{score}s_count").zero? %>
           <%= content_tag :span, score_count_label(movie, score), class: 'rating-label' %>
@@ -26,7 +26,7 @@
       <span class="rating-label">You <%= current_user.movie_rating(movie).score %> this movie</span>
       <%= link_to "Un#{current_user.movie_rating(movie).score}",
                   user_movie_rating_path(movie),
-                  method: :delete, class: 'rating-link rating-label' %>
+                  remote: true, method: :delete, class: 'rating-link rating-label' %>
     </div>
   <% end %>
 </div>

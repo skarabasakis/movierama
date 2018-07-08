@@ -10,6 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require_tree .
+
+$(function () {
+  $('#movie-list').on('ajax:send', '.rating-link', function () {
+    $(this).closest('.ratings').addClass('loading');
+  });
+
+  $('#movie-list').on('ajax:success', '.rating-link', function (e, response) {
+    $(this).closest('.ratings').replaceWith(response);
+  });
+});
