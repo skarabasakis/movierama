@@ -5,6 +5,23 @@
     display: block;
     width: 100%;
   }
+
+  .movies-sorter {
+    background: lightsteelblue;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+
+    .sort-link {
+      display: inline-block;
+      white-space: nowrap;
+      padding-right: .2em;
+
+      & + .sort-link {
+        border-left: 1px solid black;
+        padding-left: .5em;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 35.5em) {
