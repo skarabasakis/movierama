@@ -1,4 +1,10 @@
 <div class="movie">
   <%= content_tag :h3, movie.title, class: 'title' %>
+
+  <%= content_tag :div, class: 'meta' do %>
+    Posted by <%= movie_user_link(movie) %>
+    <%= distance_of_time_in_words(movie.created_at, DateTime.now) %> ago
+  <% end %>
+
   <%= content_tag :div, simple_format(movie.description), class: 'description' %>
 </div>

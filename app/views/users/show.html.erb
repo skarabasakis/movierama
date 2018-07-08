@@ -1,0 +1,9 @@
+<div id="movie-list-wrapper">
+  <div id="sidebar">
+    <%= render 'sidebar' %>
+  </div>
+  <div id="movie-list">
+    <h3>Movies posted by <%= @user.username %></h3>
+    <%= render(@user.movies) || 'No movies to display' %>
+  </div>
+</div>

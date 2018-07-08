@@ -1,5 +1,6 @@
 class Movie < ApplicationRecord
   belongs_to :user
+  delegate :username, to: :user
   validates :title, :description, presence: true
 
   default_scope { sorted_by(:created_at) }
