@@ -7,4 +7,6 @@
   <% end %>
 
   <%= content_tag :div, simple_format(movie.description), class: 'description' %>
+
+  <%= render 'movies/ratings', movie: movie %>
 </div>

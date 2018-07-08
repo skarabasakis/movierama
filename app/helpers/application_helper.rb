@@ -20,4 +20,12 @@ module ApplicationHelper
       movie.username
     end
   end
+
+  def score_count_label(movie, score)
+    if movie.ratings.present?
+      pluralize(movie.send("#{score}s_count"), score)
+    else
+      score.titleize
+    end
+  end
 end

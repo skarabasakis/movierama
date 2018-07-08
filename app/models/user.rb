@@ -5,4 +5,17 @@ class User < ApplicationRecord
 
   has_many :movies
   has_many :ratings
+
+  def can_rate?(movie, score = nil)
+    movie.user != self &&
+      ratings.where(movie: movie).where(({score: score} if score)).empty?
+  end
+
+  def movie_ratings(movie)
+    ratings.where(movie: movie)
+  end
+
+  def movie_rating(movie)
+    movie_ratings(movie).first
+  end
 end

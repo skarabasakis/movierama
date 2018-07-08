@@ -1,0 +1,32 @@
+<div class="ratings">
+  <div class="ratings-summary">
+    <% if movie.ratings_count.zero? %>
+      <% if user_signed_in? && current_user.can_rate?(movie) %>
+      <span class="first-review">
+        Be the first to vote for this movie:
+      </span>
+      <% end %>
+    <% end %>
+
+    <% Rating.scores.keys.each do |score| %>
+      <% if user_signed_in? && current_user.can_rate?(movie, score) %>
+        <%= link_to score_count_label(movie, score),
+                    user_movie_rating_path(movie, params: { score: score }),
+                    remote: true, method: :post, data: { type: :script }, class: 'rating-link rating-label' %>
+      <% else %>
+        <% unless movie.send("#{score}s_count").zero? %>
+          <%= content_tag :span, score_count_label(movie, score), class: 'rating-label' %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if user_signed_in? && current_user.movie_rating(movie).present? %>
+    <div class="user-rating">
+      <span class="rating-label">You <%= current_user.movie_rating(movie).score %> this movie</span>
+      <%= link_to "Un#{current_user.movie_rating(movie).score}",
+                  user_movie_rating_path(movie),
+                  remote: true, method: :delete, class: 'rating-link rating-label' %>
+    </div>
+  <% end %>
+</div>
