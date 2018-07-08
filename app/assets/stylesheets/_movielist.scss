@@ -1,0 +1,25 @@
+#movie-list-wrapper {
+  margin: 1em;
+
+  #sidebar a {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 35.5em) {
+  #movie-list-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    #movie-list {
+      flex: 1;
+    }
+
+    #sidebar {
+      margin-left: 1em;
+      flex: 0 1 15em;
+      order: 1;
+    }
+  }
+}
