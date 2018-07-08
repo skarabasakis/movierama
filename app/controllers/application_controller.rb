@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
       format.any { head :not_found }
     end
   end
+
+  helper_method :sort_param
+
+  def sort_param
+    params[:sort] if params[:sort].in? %w{likes_count hates_count}
+  end
 end

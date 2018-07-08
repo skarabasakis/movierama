@@ -28,4 +28,12 @@ module ApplicationHelper
       score.titleize
     end
   end
+
+  def sort_link(label, field)
+    if sort_param.to_s == field.to_s
+      content_tag :strong, label, class: 'sort-link'
+    else
+      link_to label, url_for(sort: field), class: 'sort-link'
+    end
+  end
 end

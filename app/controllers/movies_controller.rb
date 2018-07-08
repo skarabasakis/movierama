@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all.includes(:user)
+    @movies = Movie.sorted_by(sort_param).includes(:user)
   end
 end

@@ -1,0 +1,6 @@
+<div class="movies-sorter">
+  <%= content_tag :span, 'Sort_by:' %>
+  <%= sort_link('Likes', :likes_count) %>
+  <%= sort_link('Hates', :hates_count) %>
+  <%= sort_link('Date', nil) %>
+</div>
