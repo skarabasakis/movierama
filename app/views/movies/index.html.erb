@@ -1,1 +1,8 @@
-<%= render 'sidebar' %>
+<div id="movie-list-wrapper">
+  <div id="sidebar">
+    <%= render 'sidebar' %>
+  </div>
+  <div id="movie-list">
+    <%= render(@movies) || 'No movies to display' %>
+  </div>
+</div>
