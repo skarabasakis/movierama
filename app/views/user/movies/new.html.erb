@@ -1,0 +1,24 @@
+<div class="form-wrapper">
+
+<h2>New Movie</h2>
+
+<%= form_for [:user, @movie], html: {class: 'pure-form pure-form-stacked'} do |f| %>
+  <%= div_for @movie.errors.messages[:base], class: 'flash fixed alert' %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, autofocus: true %>
+    <%= div_for @movie.errors.messages[:title], class: 'error' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, autocomplete: "off" %>
+    <%= div_for @movie.errors.messages[:description], class: 'error' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: 'pure-button pure-button-primary' %>
+  </div>
+<% end %>
+</div>
