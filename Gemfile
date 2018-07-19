@@ -26,6 +26,14 @@ gem 'pry-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Testing
+  gem 'rspec', '~> 3.7'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'ffaker'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'rspec-collection_matchers'
 end
 
 group :development do
